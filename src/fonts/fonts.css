@@ -1,0 +1,180 @@
+@font-face {
+    font-family: 'Druk';
+    src: url('Druk-Heavy.woff2') format('woff2'),
+        url('Druk-Heavy.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('Druk-Bold.woff2') format('woff2'),
+        url('Druk-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('Druk-BoldItalic.woff2') format('woff2'),
+        url('Druk-BoldItalic.woff') format('woff');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('Druk-MediumItalic.woff2') format('woff2'),
+        url('Druk-MediumItalic.woff') format('woff');
+    font-weight: 500;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Druk Super';
+    src: url('Druk-SuperItalic.woff2') format('woff2'),
+        url('Druk-SuperItalic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('Druk-Medium.woff2') format('woff2'),
+        url('Druk-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Druk';
+    src: url('Druk-HeavyItalic.woff2') format('woff2'),
+        url('Druk-HeavyItalic.woff') format('woff');
+    font-weight: 900;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Druk Super';
+    src: url('Druk-Super.woff2') format('woff2'),
+        url('Druk-Super.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("./Graphik-Regular-Web.eot");
+		src: url("./Graphik-Regular-Web.eot?#iefix") format("embedded-opentype"),
+		     url("./Graphik-Regular-Web.woff2") format("woff2"),
+		     url("./Graphik-Regular-Web.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	}
+
+@font-face {
+	font-family: "Graphik";
+	src: url("./Graphik-Semibold-Web.eot");
+		src: url("./Graphik-Semibold-Web.eot?#iefix") format("embedded-opentype"),
+		     url("./Graphik-Semibold-Web.woff2") format("woff2"),
+		     url("./Graphik-Semibold-Web.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	}
+  
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-BoldItalic.woff2') format('woff2'),
+          url('NoeDisplay-BoldItalic.woff') format('woff');
+      font-weight: bold;
+      font-style: italic;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-BlackItalic.woff2') format('woff2'),
+          url('NoeDisplay-BlackItalic.woff') format('woff');
+      font-weight: 900;
+      font-style: italic;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-Black.woff2') format('woff2'),
+          url('NoeDisplay-Black.woff') format('woff');
+      font-weight: 900;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-MediumItalic.woff2') format('woff2'),
+          url('NoeDisplay-MediumItalic.woff') format('woff');
+      font-weight: 500;
+      font-style: italic;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-Medium.woff2') format('woff2'),
+          url('NoeDisplay-Medium.woff') format('woff');
+      font-weight: 500;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-Bold.woff2') format('woff2'),
+          url('NoeDisplay-Bold.woff') format('woff');
+      font-weight: bold;
+      font-style: normal;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-RegularItalic.woff2') format('woff2'),
+          url('NoeDisplay-RegularItalic.woff') format('woff');
+      font-weight: normal;
+      font-style: italic;
+  }
+
+  @font-face {
+      font-family: 'Noe Display';
+      src: url('NoeDisplay-Regular.woff2') format('woff2'),
+          url('NoeDisplay-Regular.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+  }
+
+  @font-face{
+      font-display:swap;
+      font-family:"Lyon Text";
+      font-stretch:normal;
+      font-style:normal;
+      font-weight:400;
+      src:url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular.952052f78892.woff2")format("woff2"),url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular.840c78933255.woff")format("woff")
+  }
+   @font-face{
+      font-display:swap;
+      font-family:"Lyon Text";
+      font-stretch:normal;
+      font-style:italic;
+      font-weight:400;
+      src:url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular-Italic.1f3d1b40255e.woff2")format("woff2"),url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Regular-Italic.ce9636f76967.woff")format("woff")
+  }
+   @font-face{
+      font-display:swap;
+      font-family:"Lyon Text";
+      font-stretch:normal;
+      font-style:normal;
+      font-weight:700;
+      src:url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Bold.8f7a8108a163.woff2")format("woff2"),url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Bold.49ef3785215a.woff")format("woff")
+  }
+   @font-face{
+      font-display:swap;
+      font-family:"Lyon Text";
+      font-stretch:normal;
+      font-style:italic;
+      font-weight:700;
+      src:url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Bold-Italic.22e4aa94ac93.woff2")format("woff2"),url("https://cdn.theatlantic.com/assets/static/b/frontend/dist/theatlantic/fonts/lyon/Lyon-Text-Bold-Italic.65ae5cd7ad2d.woff")format("woff")
+  }
