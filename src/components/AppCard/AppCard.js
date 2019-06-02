@@ -1,3 +1,4 @@
+import shuffle from 'shuffle-array';
 import stories from '../../data/stories.json';
 import './AppCard.scss';
 import '../StoryCard/StoryCard';
@@ -8,17 +9,47 @@ class AppCard extends HTMLElement {
   constructor() {
     super();
     this.stories = stories;
+    this.observer = new IntersectionObserver((entries) => {
+      if (entries[0].intersectionRatio === 1) {
+        setTimeout(() => {
+          this.createStoryCard(this.getNewStory());
+        }, 0);
+      }
+    }, {
+      threshold: 1,
+    });
+  }
+
+  createStoryCard(story) {
+    console.log(story);
+    const storyCard = document.createElement('story-card');
+    this.querySelector('.all-content').appendChild(storyCard);
+    storyCard.setAttribute('class', story.title.length > 60 ? 'full-headline' : '');
+    storyCard.setAttribute('title', story.title);
+    storyCard.setAttribute('summary', story.dek);
+    storyCard.setAttribute('authors', `By ${story.authors.join(', ')}`);
+    storyCard.setAttribute('image', story.image);
+    storyCard.setAttribute('minutes', story.minutes);
+    storyCard.setAttribute('likes', Math.round(story.weight / 1000) / 10);
+    storyCard.text = story.content;
+    this.observer.observe(storyCard);
+  }
+
+  getNewStory() {
+    shuffle(this.stories);
+    return this.stories[0];
   }
 
   connectedCallback() {
-    const story = this.stories[Math.round(Math.random() * this.stories.length)];
+    shuffle(this.stories);
     this.innerHTML = `
-      <story-card
-        title = "${story.title}"
-        summary = "${story.dek}"
-        image = "${story.image}"
-      ></story-card>
+      <div class="all-content">
+      </div>
     `;
+
+    for (let i = 0; i <= 5; i += 1) {
+      this.createStoryCard(this.getNewStory());
+    }
   }
 }
 

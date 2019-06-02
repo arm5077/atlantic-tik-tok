@@ -17,34 +17,13 @@ story-card {
   justify-content: flex-start;
   color: white;
   background-color: black;
-
+  position: relative;
+  scroll-snap-align: start;
+  
   .content {
     z-index: 2;
   }
-
-  h1 {
-    font-family: 'Druk', sans-serif;
-    max-width: 235px;
-    padding: 0;
-    margin: 0;
-    text-transform: uppercase;
-    font-size: 64px;
-    line-height: 61px;
-    letter-spacing: 0.38px;
-    font-weight: 200;
-  }
-
-  h2 {
-    margin: 15px 0 0 0;
-    padding: 0px;
-    font-family: Graphik, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    letter-spacing: 0.09px;
-    line-height: 22px;
-    max-width: 250px;
-  }
-
+  
   .background-image {
     width: 100%;
     height: 100%;
@@ -67,7 +46,7 @@ story-card {
     display: inline-block;
     position: relative;
     font-family: Graphik, sans-serif;
-    font-size: 12px;
+    font-size: 11px;
     letter-spacing: 0.07px;
     margin-right: 20px;
   

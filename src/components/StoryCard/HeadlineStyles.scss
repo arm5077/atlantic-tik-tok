@@ -1,0 +1,27 @@
+h1 {
+  font-family: 'Druk', sans-serif;
+  max-width: 235px;
+  padding: 0;
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 64px;
+  line-height: 61px;
+  letter-spacing: 0.38px;
+  font-weight: 200;
+  hyphens: auto;
+}
+
+h2 {
+  margin: 15px 0 0 0;
+  padding: 0px;
+  font-family: Graphik, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  letter-spacing: 0.09px;
+  line-height: 22px;
+  max-width: 250px;
+}
+
+.full-headline h1, .full-headline h2 {
+  max-width: 100%;
+}

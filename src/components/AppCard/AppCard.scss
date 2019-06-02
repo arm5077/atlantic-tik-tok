@@ -1,4 +1,13 @@
 app-card {
   width: 100%;
   height: 100%;
- }
+  display: block;
+  
+  .all-content {
+    height: 100%;
+    width: 100%;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+}
