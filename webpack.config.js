@@ -13,19 +13,21 @@ module.exports = {
     }
   },
   entry: [
-      path.resolve(__dirname, 'src/index')
+      path.resolve(__dirname, 'src/client/index')
   ],
   target: 'web',
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist/client'),
     filename: 'bundle.js'
   },
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       title: 'Title here',
-      template: './src/index.html'    }),
+      template: './src/client/index.html'
+    }),
     new CopyPlugin([
+      { from: './src/server', to: path.resolve(__dirname, 'dist') }
     ])
   ],
   module: {

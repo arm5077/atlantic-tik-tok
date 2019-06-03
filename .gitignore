@@ -1,5 +1,6 @@
 .DS_Store
 node_modules
-src/data
+src/client/data
+src/server/data
 stories.json
 dist

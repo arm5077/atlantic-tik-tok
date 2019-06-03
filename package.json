@@ -6,12 +6,18 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",
-    "start": "webpack-dev-server --mode development"
+    "start": "webpack-dev-server --mode development --devtool inline-source-map & nodemon src/server/index.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "shuffle-array": "1.0.1"
+    "express": "4.17.1",
+    "moment": "2.24.0",
+    "nodemon": "1.19.1",
+    "request": "2.88.0",
+    "request-promise-native": "1.0.7",
+    "shuffle-array": "1.0.1",
+    "xml2js": "0.4.19"
   },
   "devDependencies": {
     "@babel/core": "7.2.2",
