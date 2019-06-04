@@ -7,7 +7,7 @@ const filterStories = require('./filterStories.js');
 const shuffle = require('shuffle-array');
 const fs = require('fs');
 
-app.use(path.join(__dirname, 'client')));
+app.use(path.join(__dirname, 'client'));
 app.use(express.json())
 
 app.get('/api/latest', async function (req, res) {
