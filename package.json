@@ -9,8 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack -p",
-    "heroku-postbuild": "webpack -p",
-    "start": "node index.js",
+    "start": "node ./dist/index.js",
     "dev": "webpack-dev-server --mode development --devtool inline-source-map & nodemon src/server/index.js"
   },
   "author": "",
