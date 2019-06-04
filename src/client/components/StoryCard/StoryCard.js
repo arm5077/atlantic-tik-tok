@@ -15,7 +15,7 @@ class StoryCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['title', 'summary', 'authors', 'image', 'minutes', 'likes'];
+    return ['title', 'summary', 'authors', 'image', 'minutes', 'likes', 'newarticles'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -64,6 +64,13 @@ class StoryCard extends HTMLElement {
     }
   }
 
+  set newarticles(value) {
+    if (this.querySelector('.new-article-alert')) {
+      this.querySelector('.new-article-alert').setAttribute('data-content', `${value} new articles published!`);
+      this.querySelector('.new-article-alert').classList.remove('hidden');
+    }
+  }
+
   set text(value) {
     if (this.querySelector('full-story-card')) {
       this.querySelector('full-story-card').text = value;
@@ -73,6 +80,7 @@ class StoryCard extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="background-image" style="background-image: url('${this.image}'), linear-gradient(0deg, #200122 0%, #6F0000 100%)"></div>
+      <div class="new-article-alert hidden"></div>
       <div class="content">
         <h1>${this.title}</h1>
         <h2>${this.summary}</h2>
@@ -97,6 +105,7 @@ class StoryCard extends HTMLElement {
     this.image = this.getAttribute('image');
     this.minutes = this.getAttribute('minutes');
     this.likes = this.getAttribute('likes');
+    this.newArticles = this.getAttribute('newarticles');
     this.text = this.text;
     this.authors = this.authors;
 

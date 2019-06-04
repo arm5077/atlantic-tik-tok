@@ -29,5 +29,10 @@ module.exports = function(stories, ids) {
     return published.isSameOrAfter(moment().subtract(24, 'hours'));
   });
 
+  // Filter out videos and videos
+  exportStories = exportStories.filter(story => {
+    return story.url.indexOf('/video/') === -1 && story.url.indexOf('/video/') === -1;
+  });
+
   return exportStories
 }

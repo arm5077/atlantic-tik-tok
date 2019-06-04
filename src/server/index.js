@@ -1,6 +1,8 @@
+require('dotenv').config();
 const express = require('express');
 const app = express();
-const getStories = require('./getStoriesFromRSS');
+const getStoriesMetadata = require('./getStoriesMetadata');
+const getStoriesDetails = require('./getStoriesDetails');
 const filterStories = require('./filterStories.js');
 const shuffle = require('shuffle-array');
 const fs = require('fs');
@@ -8,16 +10,23 @@ const fs = require('fs');
 app.use(express.static('client'));
 app.use(express.json())
 
-app.get('/api/stories', async function (req, res) {
-  let stories = await getStories();
+app.get('/api/latest', async function (req, res) {
+  let stories = await getStoriesMetadata();
   stories = filterStories(stories);
   res.json(stories);
 });
 
-app.post('/api/stories', async function (req, res) {
+app.post('/api/latest', async function (req, res) {
   const ids = req.body.ids || null;
-  let stories = await getStories();
+  console.log(req.body);
+  let stories = await getStoriesMetadata();
   stories = filterStories(stories, ids);
+  for (story of stories) {
+    const details = await getStoriesDetails(story.id);
+    story.content = details.content;
+    story.image = details.image;
+    story.minutes = Math.round(story.content.split(" ").length / 250);
+  }
   res.json(stories);
 });
 
