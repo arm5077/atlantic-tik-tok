@@ -80,7 +80,14 @@ class AppCard extends HTMLElement {
     // If this is the first card AND we're not in the intro
     // AND we're not in the wormhole, we need to show the "new stories" alert
     if (this.newArticlesAlert && !this.wormhole) {
-      storyCard.setAttribute('newarticles', this.stories.length + 1);
+      storyCard.setAttribute('alertmessage', `${this.stories.length + 1} new articles published!`);
+      this.newArticlesAlert = false;
+    }
+
+    // If we're done with articles and we've opted into wormhole,
+    // let's still show a wormhole message.
+    if (this.newArticlesAlert && this.wormhole) {
+      storyCard.setAttribute('alertmessage', 'Wormhole time!');
       this.newArticlesAlert = false;
     }
 

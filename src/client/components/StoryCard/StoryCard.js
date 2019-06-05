@@ -15,7 +15,7 @@ class StoryCard extends HTMLElement {
   }
 
   static get observedAttributes() {
-    return ['title', 'summary', 'authors', 'image', 'minutes', 'likes', 'newarticles'];
+    return ['title', 'summary', 'authors', 'image', 'minutes', 'likes', 'alertmessage'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -64,9 +64,9 @@ class StoryCard extends HTMLElement {
     }
   }
 
-  set newarticles(value) {
-    if (this.querySelector('.new-article-alert')) {
-      this.querySelector('.new-article-alert').setAttribute('data-content', `${value} new articles published!`);
+  set alertmessage(value) {
+    if (this.querySelector('.new-article-alert') && value) {
+      this.querySelector('.new-article-alert').setAttribute('data-content', value);
       this.querySelector('.new-article-alert').classList.remove('hidden');
     }
   }
@@ -105,7 +105,7 @@ class StoryCard extends HTMLElement {
     this.image = this.getAttribute('image');
     this.minutes = this.getAttribute('minutes');
     this.likes = this.getAttribute('likes');
-    this.newArticles = this.getAttribute('newarticles');
+    this.alertmessage = this.getAttribute('alertmessage');
     this.text = this.text;
     this.authors = this.authors;
 
