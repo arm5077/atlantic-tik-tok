@@ -7,28 +7,30 @@
   }
 }
 
-@keyframes slide-from-top {
+@keyframes slide-in-from-top {
   0% {
-    top: -50px
+    top: -50px;
+    opacity: 0;
   }
   100% {
     top: 20px;
+    opacity: 1;
   }  
 }
 
-story-card {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  box-sizing: border-box;
-  padding: 25px;
-  align-items: center;
-  justify-content: flex-start;
-  color: white;
-  background-color: black;
-  position: relative;
-  scroll-snap-align: start;
+@keyframes slide-out-from-top {
+  0% {
+    top: 20px;
+    opacity: 1;
+  }
+  100% {
+    top: -50px;
+    opacity: 0;
+  }  
+}
 
+
+story-card {
   .content {
     z-index: 2;
   }
@@ -80,12 +82,12 @@ story-card {
     border-radius: 22.5px;
     text-align: center;
     line-height: 45px;
-    top: 20px;
+    top: -50px;
     background-color: #50E3C2;
     z-index: 5;
     left: calc(50% - 125px);
-    animation: slide-from-top .5s ease-out;
-    
+    animation: slide-in-from-top .5s ease-out forwards, slide-out-from-top .25s linear forwards;
+    animation-delay: .5s, 4s;
     &.hidden {
       display: none;
     }
