@@ -10,8 +10,12 @@ module.exports = async function(id) {
   });
 
   story = JSON.parse(story);
+  let image;
+  if (story.image.thumbs) {
+    image = story.image.thumbs.facebook.url
+  }
   return {
     content: story.content,
-    image: story.image.thumbs.facebook.url,
+    image
   }
 }
