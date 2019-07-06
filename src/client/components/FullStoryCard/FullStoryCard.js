@@ -4,7 +4,7 @@ import TimesSymbol from '../../assets/times-solid.svg';
 
 class FullStoryCard extends HTMLElement {
   static get observedAttributes() {
-    return ['title', 'summary', 'authors'];
+    return ['title', 'summary', 'authors', 'image'];
   }
 
   attributeChangedCallback(name, oldValue, newValue) {
@@ -35,23 +35,27 @@ class FullStoryCard extends HTMLElement {
     }
   }
 
+  set image(value) {
+    if (this.querySelector('.image img')) {
+      this.querySelector('.image img').setAttribute('src', value);
+    }
+  }
+
   connectedCallback() {
     this.innerHTML = `
       <div class="nav">
         <img src="${TimesSymbol}" />
       </div>
       <div class="content">
-        <div class="shadow"></div>
+        <div class="image">
+          <img src="${this.image}"/>
+        </div>
         <h1>${this.title}</h1>
         <h2>${this.summary}</h2>
         <div class="byline">${this.authors}</div>
         <div class="text"></div>
       </div>
     `;
-    this.title = this.getAttribute('title');
-    this.summary = this.getAttribute('summary');
-    this.authors = this.getAttribute('authors');
-
     this.querySelector('.nav').addEventListener('click', (e) => {
       e.stopPropagation();
       this.classList.add('hidden');

@@ -16,6 +16,10 @@ full-story-card {
     height: 0;
   }
   
+  img {
+    max-width: 100%;
+  }
+  
   .nav {
     height: 50px;
   }
@@ -53,6 +57,9 @@ full-story-card {
     padding-top: 10px;
   }
   
+  .image {
+    margin-bottom: 20px;
+  }
   
   .shadow {
     width: 96%;

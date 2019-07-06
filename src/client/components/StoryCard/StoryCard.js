@@ -59,6 +59,12 @@ class StoryCard extends HTMLElement {
     }
   }
 
+  set image(value) {
+    if (this.querySelector('full-story-card')) {
+      this.querySelector('full-story-card').setAttribute('image', `${value}`);
+    }
+  }
+
   set likes(value) {
     if (this.querySelector('#likes')) {
       this.querySelector('#likes').setAttribute('data-content', `${value}K`);
@@ -98,6 +104,7 @@ class StoryCard extends HTMLElement {
           class = "hidden"
           title = "${this.title}"
           summary = "${this.dek}"
+          image = "${this.image}"
       ></full-story-card>
     `;
 
