@@ -8,9 +8,16 @@ class StoryCard extends HTMLElement {
   constructor() {
     super();
     this.gradients = [
-      '0deg, #200122 0%, #6F0000 100%',
-      '225deg, #2C5364, #203A43, #0F2027',
-      '225deg, #fdeff9, #ec38bc, #7303c0, #03001e',
+      'to bottom, #1565C0, #b92b27',
+      'to top, #4286f4, #373B44',
+      'to bottom, #4A00E0, #8E2DE2',
+      'to top, #f5af19, #f12711',
+      'to top, #2ebf91, #8360c3',
+      'to top, #eaafc8, #654ea3',
+      'to bottom, #FF4B2B, #FF416C',
+      'to bottom, #F37335, #FDC830',
+      'to bottom, #89216B, #DA4453',
+      'to bottom, #3c1053, #ad5389',
     ];
   }
 
