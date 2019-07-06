@@ -46,12 +46,6 @@ class StoryCard extends HTMLElement {
     }
   }
 
-  set image(value) {
-    if (this.querySelector('.background-image')) {
-      this.querySelector('.background-image').style.backgroundImage = `url('${value}'), linear-gradient(${this.getGradient()})`;
-    }
-  }
-
   set minutes(value) {
     if (this.querySelector('#minutes')) {
       this.querySelector('#minutes').setAttribute('data-content', `${value} min`);
@@ -79,7 +73,7 @@ class StoryCard extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="background-image" style="background-image: url('${this.image}'), linear-gradient(0deg, #200122 0%, #6F0000 100%)"></div>
+      <div class="background" style="background: linear-gradient(${this.getGradient()})"></div>
       <div class="new-article-alert hidden"></div>
       <div class="content">
         <h1>${this.title}</h1>
