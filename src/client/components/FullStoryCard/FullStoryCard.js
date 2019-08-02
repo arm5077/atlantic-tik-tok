@@ -1,5 +1,6 @@
 import './FullStoryCard.scss';
 import '../StoryCard/StoryCard.scss';
+import '../HeartIcon/HeartIcon';
 import TimesSymbol from '../../assets/times-solid.svg';
 
 class FullStoryCard extends HTMLElement {
@@ -44,6 +45,9 @@ class FullStoryCard extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
       <div class="nav">
+        <div class="save">
+          <heart-icon text="Save for later"></heart-icon>
+        </div>
         <img src="${TimesSymbol}" />
       </div>
       <div class="content">

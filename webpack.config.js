@@ -23,7 +23,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: 'Title here',
+      title: 'Discovery | Swipe through The Atlantic',
       template: './src/client/index.html'
     }),
     new CopyPlugin([

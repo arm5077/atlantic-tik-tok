@@ -16,4 +16,9 @@ story-card, .card {
   background-color: white;
   position: relative;
   scroll-snap-align: start;
+  
+  a {
+    color: inherit;
+  }
+  
 }

@@ -32,7 +32,25 @@ full-story-card {
     display: flex;
     box-sizing: border-box;
     padding: 0px 20px;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
+    
+    .save {
+      font-family: Graphik, sans-serif;
+      font-weight: 300;
+      font-size: 14px;
+      display: flex;
+      justify-content: center;
+      color: white;
+      
+      img {
+        margin-right: 10px;
+      }
+    }
+    
+    img {
+      height: 20px;
+    }
   }
   
   .content {
@@ -80,10 +98,26 @@ full-story-card {
       color: inherit;
     }
     
+    .figure {
+      margin: 40px 0px;
+    }
+    
+    figcaption {
+      font-family: Graphik, sans-serif;
+      font-size: 14px;
+      line-height: 18px;
+      margin-top: 5px;
+      color: #666;
+    }
+    
     img {
       width: 100%;
     }
     
+  }
+  
+  heart-icon {
+    height: 25px;
   }
   
 }

@@ -47,6 +47,7 @@ story-card {
     z-index: 1;
     transition: all .5s;
     background-position: 30% 50%;
+    filter: brightness(.3);
   }
 
   .icon-tray {
@@ -60,6 +61,7 @@ story-card {
     font-size: 11px;
     letter-spacing: 0.07px;
     margin-right: 20px;
+    height: 35px;
   
     &:after {
       position: absolute;
@@ -68,6 +70,10 @@ story-card {
       padding-top: 8px;
       content: attr(data-content);
       display: block;
+    }
+    
+    heart-icon {
+      height: 35px;
     }
   }
   

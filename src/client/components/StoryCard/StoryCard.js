@@ -1,6 +1,6 @@
-import HeartIcon from '../../assets/heart-regular.svg';
 import ClockIcon from '../../assets/clock-regular.svg';
 import FullStoryCard from '../FullStoryCard/FullStoryCard';
+import HeartIcon from '../HeartIcon/HeartIcon';
 import './StoryCard.scss';
 import './HeadlineStyles.scss';
 
@@ -60,6 +60,9 @@ class StoryCard extends HTMLElement {
   }
 
   set image(value) {
+    if (this.querySelector('.background')) {
+      this.querySelector('.background').style = `background-image: url(${value})`;
+    }
     if (this.querySelector('full-story-card')) {
       this.querySelector('full-story-card').setAttribute('image', `${value}`);
     }
@@ -86,17 +89,17 @@ class StoryCard extends HTMLElement {
 
   connectedCallback() {
     this.innerHTML = `
-      <div class="background" style="background: linear-gradient(${this.getGradient()})"></div>
+      <div class="background" style="background-image: linear-gradient(${this.getGradient()}), url(${this.image})"></div>
       <div class="new-article-alert hidden"></div>
       <div class="content">
         <h1>${this.title}</h1>
         <h2>${this.summary}</h2>
         <div class="icon-tray">
-          <div class="icon" id="likes" data-content="${this.likes}">
-            <img src='${HeartIcon}' />
-          </div>
           <div class="icon" id="minutes" data-content="${this.minutes}">
             <img src='${ClockIcon}' />
+          </div>
+          <div class="icon" id="save" data-content="Save">
+            <heart-icon></heart-icon>
           </div>
         </div>
       </div>
@@ -116,6 +119,10 @@ class StoryCard extends HTMLElement {
     this.alertmessage = this.getAttribute('alertmessage');
     this.text = this.text;
     this.authors = this.authors;
+
+    this.querySelector('#save').addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
 
     this.addEventListener('click', () => {
       this.querySelector('full-story-card').classList.remove('hidden');

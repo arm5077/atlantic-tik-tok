@@ -101,7 +101,7 @@ class AppCard extends HTMLElement {
   }
 
   async pullNewStoriesFromServer() {
-    // First, if wormhole isn't triggered, fetch new stories form latest
+    // First, if wormhole isn't triggered, fetch new stories from latest
     if (!this.wormhole) {
       const stories = await fetch('/api/latest/', {
         method: 'POST',

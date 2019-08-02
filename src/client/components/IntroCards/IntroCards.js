@@ -5,11 +5,12 @@ import IntroPoseidon from './assets/intro-poseidon.jpg';
 class IntroCards extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-      <div class="card">
-        <h1>Your<br />Intellectual<br />Adventure</h1>
+      <div class="card first">
+        <div class="title-wrapper">
+          <h1>The Atlantic Discovery</h1>
+          <div class="swipe-up">Swipe up to begin</div>
+        </div>
         <img src="${IntroPoseidon}" />
-        <h2>Join The Atlantic on a voyage of discovery.</h2>
-        <div class="swipe-up">Swipe up to begin</div>
       </div>
       <div class="card">
         <h1>New here, huh?</h1>
@@ -20,7 +21,7 @@ class IntroCards extends HTMLElement {
           <li data-index="3"><strong>Swipe up</strong> to get another one. Repeat as desired.</li>
           <li data-index="4">We’ll always show you our newest stories first, but when you’re done, <strong>Enter The Wormhole</strong> to read the best stuff we’ve ever written.</li>
         </ul>
-        <div class="swipe-up">Swipe up to continue</div>
+        <div class="swipe-up" style="position:absolute">Swipe up to continue</div>
       </div>
     
     `;
