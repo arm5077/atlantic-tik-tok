@@ -42,12 +42,13 @@ story-card {
     top: 0;
     left: 0;
     background-blend-mode: multiply;
+    mix-blend-mode: multiply;
     -webkit-background-blend-mode: multiply;
     background-size: cover;
     z-index: 1;
     transition: all .5s;
     background-position: 30% 50%;
-    filter: brightness(.3);
+    background-color: rgba(0,0,0,.5);
   }
 
   .icon-tray {
